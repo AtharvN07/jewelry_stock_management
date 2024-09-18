@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Billing</h2>
+        <form method="POST">
+            <label for="barcode">Scan Barcode:</label>
+            <input type="text" id="barcode" name="barcode" required>
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required>
+            <button type="submit">Generate Bill</button>
+        </form>
+
+        {% if item %}
+        <div class="bill-details">
+            <p>Item Name: {{ item['name'] }}</p>
+            <p>Price: {{ item['price'] }}</p>
+            <p>Quantity: {{ quantity }}</p>
+            <p>Subtotal: {{ subtotal }}</p>
+            <p>Total: {{ total }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

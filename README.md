@@ -1,0 +1,1 @@
+# jewelry_stock_management
